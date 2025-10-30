@@ -1,6 +1,7 @@
 package com.example.treinojunior.koin
 
 import androidx.room.Room
+import com.example.treinojunior.data.dao.UserDao
 import com.example.treinojunior.data.database.AppDatabase
 import com.example.treinojunior.repository.repository.UserRepository
 import com.example.treinojunior.repository.repositoryImp.UserRepositoryImp
@@ -9,17 +10,16 @@ import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule = module {
-    single {
-        Room.databaseBuilder(
-            get(),
-            AppDatabase::class.java,
-            "myDB"
-        ).build()
-    }
-    single {
-        get<AppDatabase>().userDao()
-    }
-    single<UserRepository>{ UserRepositoryImp(get()) }
 
-    viewModel{ UserViewModel(get()) }
+    // ✅ Banco de dados
+    single { AppDatabase.getDatabase(get()) }
+
+    // ✅ DAO
+    single<UserDao> { get<AppDatabase>().userDao() }
+
+    // ✅ Repository
+    single<UserRepository> { UserRepositoryImp(get()) }
+
+    // ✅ ViewModel
+    viewModel { UserViewModel(get()) }
 }
