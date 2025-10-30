@@ -1,4 +1,4 @@
-package com.example.treinojunior.data.entity
+package com.example.treinojunior.repository.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

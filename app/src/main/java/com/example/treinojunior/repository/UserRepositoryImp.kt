@@ -1,8 +1,7 @@
-package com.example.treinojunior.repository.repositoryImp
+package com.example.treinojunior.repository
 
-import com.example.treinojunior.data.dao.UserDao
-import com.example.treinojunior.data.entity.UserEntity
-import com.example.treinojunior.repository.repository.UserRepository
+import com.example.treinojunior.repository.dao.UserDao
+import com.example.treinojunior.repository.entity.UserEntity
 
 class UserRepositoryImp(private val dao: UserDao): UserRepository {
     override suspend fun insertUser(user: UserEntity) {

@@ -1,11 +1,11 @@
-package com.example.treinojunior.data.database
+package com.example.treinojunior.repository.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.treinojunior.data.dao.UserDao
-import com.example.treinojunior.data.entity.UserEntity
+import com.example.treinojunior.repository.dao.UserDao
+import com.example.treinojunior.repository.entity.UserEntity
 
 @Database(
     entities = [UserEntity::class],

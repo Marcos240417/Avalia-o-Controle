@@ -1,6 +1,6 @@
-package com.example.treinojunior.repository.repository
+package com.example.treinojunior.repository
 
-import com.example.treinojunior.data.entity.UserEntity
+import com.example.treinojunior.repository.entity.UserEntity
 
 interface UserRepository {
     suspend fun insertUser(user: UserEntity)
